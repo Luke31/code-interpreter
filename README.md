@@ -11,3 +11,6 @@
 
 ## b) Run with docker compose
 1. `docker compose up` (only runs once)
+
+# Credits
+This is part of the LangChain Udemy course by Eden Marco: https://www.udemy.com/course/langchain/
