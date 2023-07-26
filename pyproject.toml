@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "code-interpreter"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "code_interpreter"}]
+
+[tool.poetry.scripts]
+main = "code_interpreter.main:main"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.0.242"
+openai = "^0.27.8"
+python-dotenv = "^1.0.0"
+qrcode = "^7.4.2"
+pandas = "^2.0.3"
+numpy = "^1.25.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
