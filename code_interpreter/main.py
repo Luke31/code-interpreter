@@ -10,9 +10,9 @@ from langchain.tools import PythonREPLTool
 load_dotenv()  # Load environment variables from .env file
 # api_key = os.getenv("OPENAI_API_KEY")
 # openai.api_key = api_key
-model = "gpt-3.5-turbo"
+# model = "gpt-3.5-turbo"
 csv_path = "in/episode_info.csv"
-# model = "gpt-4"
+model = "gpt-4"
 
 
 def main():
@@ -24,20 +24,20 @@ def main():
         verbose=True,
     )
 
-    # python_agent_executor.run(
-    #     "generate and save in the 'out'-directory within the current working directory 5 QRcodes that point to www.eastwards.jp"
-    # )
-
-    csv_agent = create_csv_agent(
-        llm=ChatOpenAI(
-            temperature=0,
-            model=model,
-        ),
-        path=csv_path,
-        verbose=True,
-        agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    python_agent_executor.run(
+        "generate and save in the 'out'-directory within the current working directory 5 QRcodes that point to www.eastwards.jp"
     )
-    csv_agent.run("in file episode_info, which writer wrote the most episodes? how many episodes did they write?")
+
+    # csv_agent = create_csv_agent(
+    #     llm=ChatOpenAI(
+    #         temperature=0,
+    #         model=model,
+    #     ),
+    #     path=csv_path,
+    #     verbose=True,
+    #     agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    # )
+    # csv_agent.run("in file episode_info, which writer wrote the most episodes? how many episodes did they write?")
 
 
 if __name__ == "__main__":
