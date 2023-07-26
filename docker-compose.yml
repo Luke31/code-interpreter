@@ -1,0 +1,10 @@
+services:
+  code-interpreter:
+    build: .
+    restart: no
+    env_file:
+      - .env
+    volumes:
+      - ./in:/app/in
+      - ./out:/app/out
+      - ./code_interpreter:/app/code_interpreter
