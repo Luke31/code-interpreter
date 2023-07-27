@@ -16,7 +16,7 @@ model = "gpt-4"
 
 
 def main():
-    print("start")
+    print(f"start {model}")
     python_agent_executor = create_python_agent(
         llm=ChatOpenAI(temperature=0, model=model),
         tool=PythonREPLTool(),
@@ -25,7 +25,7 @@ def main():
     )
 
     python_agent_executor.run(
-        "generate and save in the 'out'-directory within the current working directory 5 QRcodes that point to www.eastwards.jp"
+        "generate and save in the directory called out within the current working directory 5 QRcodes that point to www.eastwards.jp"
     )
 
     # csv_agent = create_csv_agent(
