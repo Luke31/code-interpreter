@@ -49,8 +49,9 @@ def main():
         agent_type=AgentType.OPENAI_FUNCTIONS,
         verbose=True,
     )
-    # cmd = "generate and save in the directory called out within the current working directory 5 QRcodes that point to www.eastwards.jp"
-    cmd = "in file episode_info.csv in directory called in, which writer wrote the most episodes? how many episodes did they write?"
+    cmd1 = "generate and save in the directory called out within the current working directory 5 QRcodes that point to www.eastwards.jp"
+    cmd2 = "in file episode_info.csv in directory called in, which writer wrote the most episodes? how many episodes did they write?"
+    cmd = f"First {cmd1} \n Secondly, answer {cmd2}"
     grand_agent.run(cmd)
 
 
