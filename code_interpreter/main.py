@@ -3,12 +3,15 @@ from langchain.agents import AgentType, create_csv_agent, initialize_agent
 from langchain.agents.agent_toolkits import create_python_agent
 from langchain.chat_models import ChatOpenAI
 from langchain.tools import PythonREPLTool, Tool
+import langchain
 
 load_dotenv()  # Load environment variables from .env file
 csv_path = "in/episode_info.csv"
 model_python_agent_executor = "gpt-3.5-turbo"
 model_csv_agent = "gpt-3.5-turbo"
 model_grand_agent = "gpt-4"
+
+langchain.debug=True
 
 def main():
     print(f"start")
